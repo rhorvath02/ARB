@@ -1,6 +1,11 @@
 # ARBCalcs
 *Calculates stiffness values for bladed ARBs*
 
+***This repo contains two separate programs***
+***One runs stiffness calculations while the other returns stiffness vs rotation graphs***
+
+*The following applies to both programs*
+
 ***Inputs are located in Properties.json***
 
 ***All calculations are handled within CNP.py***
