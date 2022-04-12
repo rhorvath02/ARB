@@ -1,0 +1,33 @@
+{
+    "__Note1__": "Imperial inputs must be in inches and psi; metric units must be meters and Pa",
+
+    "__Note2__": "Currently, distance units are in INCHES while shear and elastic moduli are in PSI",
+
+    "TorsionBar":
+        {
+            "Length": 20.22,
+            "OuterDiameter": 0.5,
+            "InnerDiameter": 0.43,
+            "ShearModulus": 11600e3,
+            "ElasticModulus": 30458e3
+
+        },
+
+    "Blade":
+        {
+            "Length": 3.5,
+            "Larger Base": 0.6,
+            "Smaller Base": 0.2,
+            "depth": 0.15,
+            "Angle": 90,
+            "Shear Modulus": 11600e3,
+            "Elastic Modulus": 30458e3
+        },
+
+    "Units":
+        {
+            "InputUnits": "imperial",
+            "OutputUnits": "metric"
+        }
+    
+  }
