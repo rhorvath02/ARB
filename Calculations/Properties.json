@@ -3,8 +3,6 @@
 
     "__Note2__": "Currently, distance units are in INCHES while shear and elastic moduli are in PSI",
 
-    "__Note3__": "'Stiffness' not currently implemented. I only have input values in here",
-
     "TorsionBar":
         {
             "Length": 20.47396218,
