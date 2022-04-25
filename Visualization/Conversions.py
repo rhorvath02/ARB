@@ -32,13 +32,13 @@ def processing():
         if inputUnits == "metric":
 
             # Converts list of torsion bar values from metric to imperial
-            for i in range(len(torsionValues) - 3):
+            for i in range(len(torsionValues)):
                 torsionValues[i] *= 39.3701
             for i in range(len(torsionValues) - 2, len(torsionValues)):
                 torsionValues[i] *= 1.450377377 * 10**-4
             
             # Converts list of blade values from metric to imperial
-            for i in range(len(BladeValues) - 3):
+            for i in range(len(BladeValues)):
                 BladeValues[i] *= 39.3701
             for i in range(len(BladeValues) - 2, len(BladeValues)):
                 BladeValues[i] *= 1.450377377 * 10**-4
@@ -48,13 +48,13 @@ def processing():
         else:
 
             # Converts list of torsion bar values from imperial to metric
-            for i in range(len(torsionValues) - 3):
+            for i in range(len(torsionValues)-2):
                 torsionValues[i] *= 0.0254
             for i in range(len(torsionValues) - 2, len(torsionValues)):
                 torsionValues[i] *= 6894.7572932
 
             # Converts list of blade values from imperial to metric
-            for i in range(len(BladeValues) - 3):
+            for i in range(len(BladeValues)-2):
                 BladeValues[i] *= 0.0254
             for i in range(len(BladeValues) - 2, len(BladeValues)):
                 BladeValues[i] *= 6894.7572932
