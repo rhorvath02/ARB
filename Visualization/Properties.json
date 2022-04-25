@@ -3,11 +3,13 @@
 
     "__Note2__": "Currently, distance units are in INCHES while shear and elastic moduli are in PSI",
 
+    "__Note3__": "'Stiffness' not currently implemented. I only have input values in here",
+
     "TorsionBar":
         {
-            "Length": 20.22,
-            "OuterDiameter": 0.5,
-            "InnerDiameter": 0.43,
+            "Length": 20.47396218,
+            "OuterDiameter": 0.625,
+            "InnerDiameter": 0.527,
             "ShearModulus": 11600e3,
             "ElasticModulus": 30458e3
 
@@ -15,10 +17,10 @@
 
     "Blade":
         {
-            "Length": 3.5,
-            "Larger Base": 0.6,
-            "Smaller Base": 0.2,
-            "depth": 0.15,
+            "Length": 2.85,
+            "Larger Base": 0.625,
+            "Smaller Base": 0.4,
+            "Depth": 0.1,
             "Angle": 90,
             "Shear Modulus": 11600e3,
             "Elastic Modulus": 30458e3
