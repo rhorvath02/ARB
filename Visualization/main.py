@@ -55,7 +55,7 @@ def bladeStiffnessVsAngle():
 
     plt.xlabel("Angle of Blade Rotation (degrees)")
     # naming the y axis
-    plt.ylabel('Individual Blade Stiffness (Nm/rad)')
+    plt.ylabel('Individual Blade Stiffness (N/m)')
     
     # giving a title to my graph
     plt.title('Blade Stiffness vs Angle of Blade Rotation')
@@ -70,7 +70,7 @@ def combinedStiffnessVsAngle():
 
     plt.xlabel("Angle of Rotation for each Blade (degrees)")
     # naming the y axis
-    plt.ylabel('Combined ARB Stiffness (Nm/rad)')
+    plt.ylabel('Combined ARB Stiffness (N/m)')
     
     # giving a title to my graph
     plt.title('Combined ARB Stiffness vs Angle of Blade Rotation')
