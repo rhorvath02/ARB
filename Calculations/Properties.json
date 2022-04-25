@@ -5,9 +5,9 @@
 
     "TorsionBar":
         {
-            "Length": 20.22,
+            "Length": 20.47396218,
             "OuterDiameter": 0.625,
-            "InnerDiameter": 0.509,
+            "InnerDiameter": 0.527,
             "ShearModulus": 11600e3,
             "ElasticModulus": 30458e3
 
@@ -15,10 +15,10 @@
 
     "Blade":
         {
-            "Length": 4,
+            "Length": 2.85,
             "Larger Base": 0.625,
-            "Smaller Base": 0.2,
-            "Depth": 0.15,
+            "Smaller Base": 0.4,
+            "Depth": 0.1,
             "Shear Modulus": 11600e3,
             "Elastic Modulus": 30458e3
         },
