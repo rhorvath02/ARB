@@ -17,7 +17,7 @@ def bladeStiffnessRange():
     for i in range(0, 91):
         BladeValues[4] = i
 
-        Blade = CNP.Blade(*BladeValues, units)
+        Blade = CNP.Blade(*BladeValues)
 
         KCantilever = Blade.stiffness()
 
@@ -29,21 +29,23 @@ def combinedStiffnessRange():
     for i in range(0, 91):
         BladeValues[4] = i
 
-        TorsionBar = CNP.TorsionBar(*torsionBarValues, units)
+        TorsionBar = CNP.TorsionBar(*torsionBarValues)
 
-        Blade = CNP.Blade(*BladeValues, units)
+        Blade = CNP.Blade(*BladeValues)
 
         KTorsional = TorsionBar.stiffness()
 
-        KCantilever1 = Blade.stiffness()
+        KCantilever = Blade.stiffness()
 
         bladeLength = BladeValues[0]
-        TorsionBarAndBlade = CNP.TorsionBarAndBlade(KTorsional, KCantilever1, bladeLength)
+
+        TorsionBarAndBlade = CNP.TorsionBarAndBlade(KTorsional, KCantilever, bladeLength)
 
         KCombined = TorsionBarAndBlade.combined_stiffness()
 
         x.append(i)
         y.append(KCombined)
+        
 
 
 def bladeStiffnessVsAngle():
