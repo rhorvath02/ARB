@@ -11,55 +11,51 @@ def processing():
 
     f.close()
 
-    torsionBarData = processing["TorsionBar"]
+    TB_in = processing["TorsionBar"]
 
-    BladeData = processing["Blade"]
+    blade_in = processing["Blade"]
 
     units = processing["Units"]
 
-    torsionValues = []
-    for item in torsionBarData.values():
-        torsionValues.append(item)
+    TB_val = [x for x in TB_in.values()]
     
-    BladeValues = []
-    for item in BladeData.values():
-        BladeValues.append(item)
+    blade_val = [x for x in blade_in.values()]
     
-    inputUnits = units.get("InputUnits")
-    outputUnits = units.get("OutputUnits")
+    inputUnits, outputUnits = units.get("InputUnits"), units.get("OutputUnits")
     
     if inputUnits != outputUnits:
         if inputUnits == "metric":
 
             # Converts list of torsion bar values from metric to imperial
-            for i in range(len(torsionValues)):
-                torsionValues[i] *= 39.3701
-            for i in range(len(torsionValues) - 2, len(torsionValues)):
-                torsionValues[i] *= 1.450377377 * 10**-4
-            
-            # Converts list of blade values from metric to imperial
-            for i in range(len(BladeValues)):
-                BladeValues[i] *= 39.3701
-            for i in range(len(BladeValues) - 2, len(BladeValues)):
-                BladeValues[i] *= 1.450377377 * 10**-4
 
-            return torsionValues, BladeValues, units.get("OutputUnits")
+            TB_conv_geo = [x * 39.3701 for x in TB_val[:-2]]
+
+            print(TB_conv_geo)
+
+            TB_conv_const = [x * 1.450377377 * 10**-4 for x in TB_val[-2:]]
+
+            # Converts list of blade values from metric to imperial
+
+            blade_conv_geo = [x * 39.3701 for x in blade_val[:-2]]
+
+            blade_conv_const = [x * 1.450377377 * 10**-4 for x in blade_val[-2:]]
 
         else:
 
             # Converts list of torsion bar values from imperial to metric
-            for i in range(len(torsionValues)-2):
-                torsionValues[i] *= 0.0254
-            for i in range(len(torsionValues) - 2, len(torsionValues)):
-                torsionValues[i] *= 6894.7572932
+
+            TB_conv_geo = [x * 0.0254 for x in TB_val[:-2]]
+
+            TB_conv_const = [x * 6894.76 for x in TB_val[-2:]]
 
             # Converts list of blade values from imperial to metric
-            for i in range(len(BladeValues)-2):
-                BladeValues[i] *= 0.0254
-            for i in range(len(BladeValues) - 2, len(BladeValues)):
-                BladeValues[i] *= 6894.7572932
 
-            return torsionValues, BladeValues, units.get("OutputUnits")
-    
-    else:
-        return torsionValues, BladeValues, units.get("OutputUnits")
+            blade_conv_geo = [x * 0.0254 for x in blade_val[:-2]]
+
+            blade_conv_const = [x * 6894.76 for x in blade_val[-2:]]
+
+        TB_val = TB_conv_geo + TB_conv_const
+
+        blade_val = blade_conv_geo + blade_conv_const
+
+    return TB_val, blade_val, units.get("OutputUnits")
