@@ -11,13 +11,14 @@ jsonValues = conv.processing()
 torsionBarValues = jsonValues[0]
 BladeValues = jsonValues[1]
 units = jsonValues[2]
+print(units)
 
 
 def bladeStiffnessRange():
     for i in range(0, 91):
         BladeValues[4] = i
 
-        Blade = CNP.Blade(*BladeValues)
+        Blade = CNP.Blade(*BladeValues, units)
 
         KCantilever = Blade.stiffness()
 
@@ -29,9 +30,9 @@ def combinedStiffnessRange():
     for i in range(0, 91):
         BladeValues[4] = i
 
-        TorsionBar = CNP.TorsionBar(*torsionBarValues)
+        TorsionBar = CNP.TorsionBar(*torsionBarValues, units)
 
-        Blade = CNP.Blade(*BladeValues)
+        Blade = CNP.Blade(*BladeValues, units)
 
         KTorsional = TorsionBar.stiffness()
 
